@@ -3,6 +3,17 @@ document.addEventListener('click', () => {
     audio.play();
 }, { once: true });
 
+const slideshow = document.querySelector('.slideshow');
+const totalImages = 23;
+
+for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement('img');
+    img.className = 'slide' + (i === 1 ? ' active' : '');
+    img.src = `images/image${i}.jpg`;
+    img.alt = `Image ${i}`;
+    slideshow.appendChild(img);
+}
+
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
 
